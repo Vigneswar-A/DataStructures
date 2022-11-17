@@ -190,13 +190,17 @@ class Graph
 int main(void)
 {
     Graph graph(6);
+    
     graph.add_edge(1, 3);
     graph.add_edge(1, 2);
     graph.add_edge(1, 4);
     graph.add_edge(4, 5);
     graph.add_edge(3, 5);
     graph.add_edge(2, 3);
+
+    cout << "adjacency matrix:" << endl;
     graph.display();
+
 
     /*
            1----------4
@@ -206,8 +210,12 @@ int main(void)
            2----3---------5
     */
 
+    cout << "dfs: ";
     graph.dfs();
+
+    cout << "bfs: ";
     graph.bfs();
+
     graph.destroy_graph();
 
 }
