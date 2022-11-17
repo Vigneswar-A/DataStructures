@@ -197,6 +197,15 @@ int main(void)
     graph.add_edge(3, 5);
     graph.add_edge(2, 3);
     graph.display();
+
+    /*
+           1----------4
+           | \         \
+           |  \         \
+           |   \         \
+           2----3---------5
+    */
+
     graph.dfs();
     graph.bfs();
     graph.destroy_graph();
