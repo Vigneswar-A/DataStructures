@@ -85,8 +85,9 @@ public:
         {
             head->prev->next = head->next;
             head->next->prev = head->prev;
-            delete head;
+            Node *temp = head;
             head = head->next;
+            delete temp;
         }
 
         Node *currnode = head->next;
