@@ -153,7 +153,7 @@ public:
 
 int main()
 {
-    // cout << "Example syntax : \n\tinsert 1 2 3 \n\treverse \n\tdelete 1 2 3 4 \n\texit\n";
+    cout << "Example syntax : \n\tinsert 1 2 3 \n\treverse \n\tdelete 1 2 3 4 \n\texit\n";
     string choice = "";
     string temp = "";
     LinkedList list;
