@@ -76,6 +76,7 @@ public:
 
         if (head->val == val && head->next == head)
         {
+            delete head;
             head = NULL;
             return;
         }
@@ -84,6 +85,7 @@ public:
         {
             head->prev->next = head->next;
             head->next->prev = head->prev;
+            delete head;
             head = head->next;
         }
 
@@ -94,6 +96,7 @@ public:
             {
                 currnode->prev->next = currnode->next;
                 currnode->next->prev = currnode->prev;
+                delete currnode;
                 return;
             }
             currnode = currnode->next;
@@ -132,6 +135,19 @@ public:
             currnode = currnode->next;
         }
         cout << "]" << endl;
+    }
+
+    void destroy()
+    {
+        Node *currnode = head->next, *temp;
+        while (currnode != head)
+        {
+            temp = currnode;
+            currnode = currnode->next;
+            delete temp;
+        }
+        delete head;
+        head = NULL;
     }
 };
 
@@ -178,5 +194,6 @@ int main()
             }
         }
     }
+    list.destroy();
     return 0;
 }
